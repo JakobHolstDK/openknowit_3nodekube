@@ -6,6 +6,15 @@
     state: present
   when: ansible_os_family == "Archlinux"
 
+- name: "role| openknowit_3nodekube | pre_install | copy kubernetes.list to apt dir"
+  copy:
+    src: kubernetes.list
+    dest: /etc/apt/sources.list.d/kubernetes.list
+    mode: 0644
+    owner: root
+  when: ansible_os_family == "Debian"
+  become: true
+
 - name: "role| openknowit_3nodekube | pre_install | copy setup3nodekube_debian.sh to server "
   copy:
     src: setup3nodekube_debian.sh
