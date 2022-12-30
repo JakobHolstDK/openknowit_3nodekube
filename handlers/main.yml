@@ -1,0 +1,6 @@
+---
+# Handlers
+- name: restart service
+  service:
+    name: "{{ servicename }}"
+    state: restarted

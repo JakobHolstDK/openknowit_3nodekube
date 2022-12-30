@@ -1,0 +1,7 @@
+---
+# This task installs pre dependencies of xorg This is an example og tweaks and twerks
+- name: Installing pre dependencies to use xorg-server
+  pacman:
+    name: libglvnd
+    state: present
+  when: ansible_os_family == "Archlinux"

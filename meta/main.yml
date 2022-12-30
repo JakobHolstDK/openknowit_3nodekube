@@ -1,0 +1,12 @@
+galaxy_info:
+  author: Jakob Holst
+  description: Jakob Holst. Knowit 
+  license: gpl2
+  min_ansible_version: "2.1"
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+
+  galaxy_tags: [tag]
