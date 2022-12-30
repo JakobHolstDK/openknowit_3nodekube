@@ -1,15 +1,15 @@
 ---
 # This task installs pre dependencies of xorg This is an example og tweaks and twerks
-- name: Installing pre dependencies to use xorg-server
+- name: "role| openknowit_3nodekube | pre_install | if we are on arch we need libglvnd"
   pacman:
     name: libglvnd
     state: present
   when: ansible_os_family == "Archlinux"
 
-- name: "openknowit_3nodekube | main |  "
+- name: "role| openknowit_3nodekube | pre_install | copy setup3nodekube_debian.sh to server "
   copy:
     src: setup3nodekube_debian.sh
-    dest: /ust/local/bin/setup3nodekube_debian.sh
+    dest: /usr/local/bin/setup3nodekube_debian.sh
     mode: 0755
     owner: root
   when: ansible_os_family == "Debian"

@@ -1,6 +1,6 @@
 ---
-- name: Include OS-specific variables.
+- name: "role| openknowit_3nodekube | pre_install | include os related vars"
   include_vars: "{{ ansible_os_family }}.yml"
 
-- name: Installing pre dependencies of role
+- name: "role| openknowit_3nodekube | pre_install | include os related tweaks and twists"
   include: pre_install.yaml
