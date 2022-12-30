@@ -5,3 +5,5 @@
 - name: Installing pre dependencies of role
   include: pre_install.yaml
 
+- name: "openknowit_3nodekube | main |  "
+

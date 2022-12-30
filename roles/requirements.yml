@@ -1,5 +1,5 @@
 - src: https://github.com/JakobHolstDK/openknowit_3nodekube.git
   name: openknowit_3nodekube
   scm: git
-  version: master
+  version: main
 

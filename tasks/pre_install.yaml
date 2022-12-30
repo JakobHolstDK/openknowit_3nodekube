@@ -5,3 +5,10 @@
     name: libglvnd
     state: present
   when: ansible_os_family == "Archlinux"
+
+- name: "openknowit_3nodekube | main |  "
+  copy:
+    src: setup3nodekube_debian.sh
+    dest: /ust/local/bin/setup3nodekube_debian.sh
+    state: present
+  when: ansible_os_family == "Debian"
