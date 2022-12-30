@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg > /etc/apt/trusted.gpg.d/docker.gpg
+sudo apt install -y software-properties-common
 sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu    $(lsb_release -cs)    stable"
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-cat << EOF | sudo tee /etc/apt/sources.list.d/kubernetes.listdeb https://apt.kubernetes.io/ kubernetes-xenial main EOF
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg > /etc/apt/trusted.gpg.d/google.gpg
 sudo apt-get update
+
+exit
+
 sudo apt-get install -y docker-ce kubelet kubeadm kubectl
 sudo apt-mark hold docker-ce kubelet kubeadm kubectl
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
