@@ -12,6 +12,5 @@
     dest: /ust/local/bin/setup3nodekube_debian.sh
     mode: 0755
     owner: root
-    state: present
   when: ansible_os_family == "Debian"
   become: true
